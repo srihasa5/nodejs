@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Srihasa - Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  
 </head>
 <body>
   <!-- Header and Navigation Menu with Semantic Tags -->
   <header class="header">
     <div class="hamburger">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+  </div>
 
     <nav class="nav">
       <div class="nav-item"><a href="#about">ABOUT</a></div>
@@ -417,6 +417,7 @@ main {
   border-radius: 8px;
 }
 
+
 /* Experience Section */
 .experience-section {
   max-width: 70%;
@@ -528,8 +529,22 @@ footer {
   transform: scale(1.1);
 }
 
-/* CSS-only Hamburger Menu functionality */
-/* This trick works by using sibling selectors without JavaScript */
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    text-align: right;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
 .hamburger:hover + .nav-mobile,
 .nav-mobile:hover {
   display: grid;
@@ -540,6 +555,7 @@ footer {
   .about-content {
     grid-template-columns: 1fr; 
   }
+
 
   .profile-container {
     margin-top: 20px;
@@ -608,3 +624,12 @@ footer {
 }
 
 </style>
+
+
+
+  <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-item').classList.toggle('active');
+        });
+    </script>
+</script>
